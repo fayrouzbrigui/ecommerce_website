@@ -1,0 +1,49 @@
+<app-header></app-header>
+<div class="login">
+  <div class="container">
+    <div class="form-vertical">
+      <h1>Login</h1>
+      <form (ngSubmit)="submitForm()" [formGroup]="form" autocomplete="off">
+  
+     
+        
+  
+        <!-- Username -->
+        <div>
+            <label>Username*</label>
+            <input
+              
+              placeholder="enter your username"
+              formControlName="username"
+            />
+        </div>
+        <!-- /Username -->
+  
+        <!-- Password -->
+        <div>
+            <label>Password*</label>
+            <input
+              
+              type="password"
+              placeholder="enter your password"
+              formControlName="password"
+            />
+        </div>
+        <!-- /Password -->
+          <button type="submit"  color="primary">Login</button>
+          
+          <div class="signup">
+            if you don't have an account please <a routerLink="/user-signup">click here</a>
+          </div>
+
+          <label for="" class="required">* required fields</label>
+     
+
+
+</form>
+
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

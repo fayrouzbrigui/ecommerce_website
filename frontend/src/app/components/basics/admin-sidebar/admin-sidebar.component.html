@@ -1,0 +1,58 @@
+<div class="navbar" id="navigation">
+    <div class="logo">
+        <a routerLink="/dashboard"><span class="first">Dream</span><span class="second">Purely</span></a>
+    </div>
+   
+    <ul class="center-nav">
+        <div class="menu-item">
+            <li><i class="fa fa-home" aria-hidden="true"></i><a href="#" routerLink="/dashboard"> Dashboard </a></li>         
+        </div>
+        <div class="menu-item">
+            <li><i class="fa fa-users" aria-hidden="true"></i><a routerLink="/users-list"> Manage Users </a></li>           
+        </div>
+        <div class="menu-item">
+            <li (click)="toggle()"><i class="fa fa-table" aria-hidden="true"></i><a>Tables</a><i class="fa fa-chevron-right" aria-hidden="true"></i></li>        
+        </div>
+        <ul *ngIf="show">
+                <div class="menu-item">
+                    <li><i class="fa fa-product-hunt" aria-hidden="true"></i><a routerLink="/product-list"> Manage Products </a></li>          
+                </div>
+                <div class="menu-item">
+                    <li><i class="fa fa-certificate" aria-hidden="true"></i><a routerLink="/brands"> Manage Brands </a></li>
+                </div>
+                <div class="menu-item">
+                    <li><i class="fa fa-list-alt" aria-hidden="true"></i><a routerLink="/main-categories"> Manage Main Categories </a></li>
+                </div>
+                <div class="menu-item">
+                    <li><i class="fa fa-list-alt" aria-hidden="true"></i><a routerLink="/categories"> Manage Categories </a></li>
+                </div>
+                <div class="menu-item">
+                    <li><i class="fa fa-list-alt" aria-hidden="true"></i><a routerLink="/sub-categories"> Manage SubCategories </a></li>
+                </div>
+                <div class="menu-item">
+                    <li><i class="fa fa-filter" aria-hidden="true"></i><a routerLink="/filters-list"> Manage Properties </a></li>
+                </div>
+                <div class="menu-item">
+                    <li><i class="fa fa-check" aria-hidden="true"></i><a routerLink="/filters-options-list"> Manage Propoerty Options </a></li>
+                </div>
+            </ul>
+        <div class="menu-item">
+            <li><i class="fa fa-first-order" aria-hidden="true"></i><a routerLink="/orders"> Manage Orders </a></li>
+        </div>
+        <div class="menu-item">
+            <li><i class="fa fa-line-chart" aria-hidden="true"></i><a href="#"> Analytics </a></li>
+        </div>
+
+        <div class="menu-item">
+            <li><i class="fa fa-comments" aria-hidden="true"></i><a routerLink="/send-message"> Send Messages </a></li>
+        </div>
+        
+    </ul>
+    <ul class="bottom-nav">
+        <hr>
+        <div class="menu-item">
+            <li><i class="fa fa-sign-out" aria-hidden="true"></i><a href="#"> Logout </a></li>
+        </div>
+       
+    </ul>
+</div>

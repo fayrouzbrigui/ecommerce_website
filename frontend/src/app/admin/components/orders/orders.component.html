@@ -1,0 +1,50 @@
+
+<div class="container">
+    <div class="main-content">
+        <app-admin-sidebar *ngIf="showSidebar"> </app-admin-sidebar>
+            <div class="main-top">
+            
+                <div class="bars" id="menu" (click)="toggleSidebar()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            
+            <div class="orders">
+                <h2 class="heading"> Orders </h2>
+                <div class="table-wrapper" *ngIf="OrderItems.length > 0">
+                    <table>
+                        <thead class="thead">
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Product imagee</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Status</th>
+                                <th>Edit Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of OrderItems">
+                                <td> <h2>{{ item.product.product_name }}</h2></td>
+                                <td> <img [src]="item.product.image_url"></td>
+                                <td>${{ item.price }}</td>
+                                <td>{{ item.quantity }}</td>
+                                <td>{{item.status}}</td>
+                                <td class="btns">
+                                    <button (click)="updateStatus(item.order_item_id, 'C')">Confirmed</button>
+                                    <button (click)="updateStatus(item.order_item_id, 'S')">Shipped</button>
+                                    <button (click)="updateStatus(item.order_item_id, 'D')">Delivered</button>
+
+                                </td>
+                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            
+    </div>
+</div>

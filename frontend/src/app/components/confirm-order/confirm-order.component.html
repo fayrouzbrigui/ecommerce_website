@@ -1,0 +1,60 @@
+<app-header></app-header>
+
+<div class="main">
+    <form action="" [formGroup]="angForm" (ngSubmit)="confirmorder()" autocomplete="off">
+        <div class="col12">
+            <div class="card">
+                <div class="header">
+                    <div class="title">
+                        <span><i class="fa fa-check" aria-hidden="true"></i></span>
+                        <h2>1.Address</h2>
+                    </div>
+                    <a routerLink="/address">Edit</a>
+                </div>
+                <div class="info" *ngIf="defaultaddress">
+                    <div class="address"> {{ defaultaddress.country }} | {{ defaultaddress.province }} | {{ defaultaddress.city }} | {{ defaultaddress.street }}</div>
+                    <div class="address"> {{ defaultaddress.country }} | {{ defaultaddress.province }}</div>
+                </div>
+            </div>
+            
+            <div class="card">
+
+                <div class="header">
+                    <div class="title">
+                        <span><i class="fa fa-check" aria-hidden="true"></i></span>
+                        <h2>2.Shipping</h2>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <div *ngFor="let method of methods" class="patment">
+                        <input class="radio-btn" type="radio" formControlName="payment_method" [value]="method.payment_method_id" (change)="selectPaymentMethod($event)">
+                        <label for="">{{method.payment_method_name}}</label>
+                    </div>
+
+                    <div class="cart">
+                        <div class="container" *ngFor="let item of cart.items">
+                            <a  href="" class="product-link"><img [src]="item.product.image_url" alt=""></a>
+                            <div class="cart-body">
+                                <p class="product-name">{{ item.product.product_name }}</p>
+                                <p class="price">Price: ${{item.product.product_price}}</p>
+                                <p class="qty">Quantity: {{item.quantity}}</p>
+                            </div>         
+                        </div>
+                        
+                    </div>
+                    <div class="btn">
+                        <a class="return" routerLink="/cart">Return to Cart</a>
+                    </div>
+                    
+                </div>
+                <button type="submit">Confirm Order</button>
+            </div>
+            
+        </div>
+        
+    </form>
+</div>
+
+
+<app-footer></app-footer>

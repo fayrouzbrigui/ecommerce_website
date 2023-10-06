@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="main-content">
+        <app-admin-sidebar *ngIf="showSidebar"> </app-admin-sidebar>
+        <div class="main-top">
+            <div class="bars" id="menu" (click)="toggleSidebar()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+
+        <div class="categories">
+            <h2 class="heading"> Categories list </h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Image</th>
+                            <th>Main category</th>
+                            <th>Created At</th>
+                            <th>Actions</th>
+                        </tr>
+                       
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let category of categories">
+                            <td>{{category.category_name}}</td>
+                            <td>
+                                <img [src]="category.image_url" alt="">
+                            </td>
+
+                            <td>{{ category.main_category_name}}</td>
+
+                            <td>{{category.createdAt}}</td>
+
+                            <td>
+                                <a class="btn btn-success" [routerLink]="['/edit-category/', category.category_id]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                <a class="trash" (click)="deleteCategory(category.category_id)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <button class="add" routerLink="/add-categories">Add New Category</button>
+        </div>
+        
+
+    </div>
+
+</div>
+        
+        
+
+

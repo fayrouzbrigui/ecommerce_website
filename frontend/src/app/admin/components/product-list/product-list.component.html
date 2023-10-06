@@ -1,0 +1,109 @@
+<div class="container">
+
+        
+        <div class="main-content">
+            
+            <app-admin-sidebar *ngIf="showSidebar"> </app-admin-sidebar>
+            <div class="main-top">
+            
+                <div class="bars" id="menu" (click)="toggleSidebar()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>  
+    
+            <div class="products">
+                <h2 class="heading"> Products list </h2>
+    
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Description</th>
+                                <th>Image</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Trending</th>
+                                <th>Offer</th>
+                                <th>Deadline</th>
+                                <th>Brand</th>
+                                <th>Main Category</th>
+                                <th>Category</th>
+                                <th>Subcategory</th>
+                                <th>Caracteristics</th>
+                                <th>Created At</th>
+                                <th>Actions</th>
+                            </tr>
+                            
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let product of products">
+                                <td>{{product.product_name}}</td>
+    
+                                <td class="desc">{{product.product_description}}</td>
+    
+                                <td>
+                                    <img [src]="product.image_url" alt="">
+                                </td>
+    
+                                <td>${{product.product_price}}</td>
+    
+                                <td>{{product.product_countStock}}</td>
+                                <td>{{product.trending}}</td>
+                                <td>{{product.offer}}</td>
+                                <td>{{product.deadline | date}}</td>
+                                <td>
+                                
+                                        {{ product.brand_name}}
+                                
+                                </td>
+    
+                                <td>
+                                
+                                    {{ product.main_category_name}}
+                            
+                                </td>
+    
+                                <td>
+                                
+                                    {{ product.category_name}}
+                            
+                                </td>
+    
+                                <td>
+                                
+                                    {{ product.subcategory_name}}
+                            
+                                </td>
+    
+                                <td>
+                                    <ul>
+                                        <li *ngFor="let option of product.filter_options" >{{ option.filteroption_name}}</li>
+                                    </ul>
+                                    </td>
+    
+                                <td>{{product.createdAt}}</td>
+    
+                                <td>
+                                    <a class="btn btn-success" [routerLink]="['/edit-product/',product.product_id]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <a class="trash" (click)="deleteProduct(product.product_id)" ><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                    
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+    
+                <button class="add" routerLink="/add-products">Add New Product</button>
+            </div>
+            
+    
+        </div>
+
+</div>
+
+
+
+

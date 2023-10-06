@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="main-content">
+        <app-admin-sidebar *ngIf="showSidebar"> </app-admin-sidebar>
+        <div class="main-top">
+            <div class="bars" id="menu" (click)="toggleSidebar()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+
+        
+
+        <div class="brands">
+            <h2 class="heading"> Add New Brand </h2>
+            <form action="" [formGroup]="angForm" (ngSubmit)="postdata()" autocomplete="off">
+
+                <div class="form-control">
+                    <label>Brand Name</label>
+                    <input type="text" formControlName="brand_name">
+                </div>
+
+                <div class="form-control">
+                    <label>Brand Image</label>
+                    <input type="file" (change)="onImageSelected($event)" formControlName="brand_image">
+                </div>
+                   
+                <input type="submit" name="submit" value="Add New Brand" class="add">
+            </form>
+        </div>
+    </div>
+</div>
+       
+       
+
+

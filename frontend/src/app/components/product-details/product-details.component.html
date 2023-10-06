@@ -1,0 +1,77 @@
+<app-header></app-header>
+<div class="container">
+    <div class="card-wrapper">
+        <div class="card">
+            <div class="prduct-imgs">
+                <div class="img-display">
+                    <div class="img-showcase">
+                        <img [src]="product.product_image">
+                    </div>
+                </div>
+                <div class="img-select">
+                    <div class="img-item" *ngFor="let image of product.images">
+                        <a (click)="selectImage(image)"><img [src]="image.image_url"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-content">
+                
+                <h2 class="product-title">{{product.product_name}}</h2>
+                <p class="brand">{{product.brand_name}}</p>
+                <div class="product-price">
+                    <p class="price">Price: <span>${{product.product_price}}</span></p>
+                </div>
+                <div class="product-detail">
+                    <h2>About this product:</h2>
+                    <p>{{product.product_description}}</p>
+                </div>
+                <button (click)="addToCart(product.product_id)">Add to Cart</button>
+                <div class="social-link">
+                    <a (click)="shareOnFacebook()"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="reviews">
+            <div class="sectop">
+                <h2><span class="circle"></span><span>reviews</span></h2>
+            </div>
+            <div class="review" *ngFor="let prod of product.reviews">
+                <p>{{prod.user.username}}</p>
+                <p>{{prod.rating_stars}}</p>
+                <p>{{prod.comment}}</p>
+            </div>
+        </div>
+        <div class="related-products">
+            <div class="sectop">
+                <h2><span class="circle"></span><span>Latest Products</span></h2>
+            </div>
+            <div class="latest-row wrapper">
+                <div class="col5" *ngFor="let prod of product.related_products">
+                    <div class="product-content">
+                        <div class="product-img">
+                            <img [src]="prod.image_url" alt="">
+                        </div>
+                        <div class="search-icon">
+                            <i class="fa fa-search-plus" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-info-top">
+                        <h3 class="sm-title">{{prod.product_name}}</h3>
+                        </div>
+                        <p class="product-price">${{prod.product_price}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
+
+
+
+

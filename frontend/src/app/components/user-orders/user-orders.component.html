@@ -1,0 +1,56 @@
+<app-header></app-header>
+<div class="main-section">
+    <div class="main-row">
+        <div class="col">
+            <div class="user-nav">
+                <a href="#" class="nav-link">
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                    Your Profile
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa fa-first-order" aria-hidden="true"></i>
+                    Your Orders
+                   
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    Your Wishlist
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa fa-address-book" aria-hidden="true"></i>
+                    Your Addresses
+                </a>
+            </div>
+        </div>        
+        <div class="order-section">
+            <div class="order-body">
+                <div class="section-title">
+                    <h1 class="title">Your Orders</h1>
+                </div>
+                <div class ="row" *ngIf="OrderItems.length > 0">
+
+                    <div class="order-item"  *ngFor="let item of OrderItems">
+                        <div class="order-card" >
+                            <div class="card">
+                                <img [src]="item.product.image_url">
+                                <div class="card-details">
+                                    <h2>{{ item.product.product_name }}</h2>
+                                    <p>Price: ${{ item.price }}</p>
+                                    <p>Quantity: {{ item.quantity }}</p>
+                                    <p>Status: {{item.status}}</p>
+                                </div>
+                                <a [routerLink]="['/order-details/',item.order_item_id]">View Details</a>
+                                <a [routerLink]="['/review/',item.order_item_id]">Evaluate</a>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<app-footer></app-footer>

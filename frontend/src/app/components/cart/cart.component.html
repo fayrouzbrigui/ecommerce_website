@@ -1,0 +1,82 @@
+<app-header></app-header>
+<div class="cart-container">
+  <div class="row" *ngIf="cart && cart.items.length === 0">
+    <div class="row-container">
+      <div class="container">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        <h2>Your cart is empty!</h2>
+        <a class="discover" routerLink="/home">Discover our products</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="!cart">
+    <div class="row-container">
+      <div class="container">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        <h2>Your cart is empty!</h2>
+        <a class="discover" routerLink="/home">Discover our products</a>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="cart">
+    <div class="col12">
+      <div class="card">
+        <div class="cart-header" *ngIf="cart && cart.items.length > 0">
+          <h2>Your Cart ({{ cart.items.length }})</h2>
+        </div>
+        <div class="cart-body" *ngFor="let item of cart.items">
+          <a  href="" class="product-link">
+            <div class="product-image">
+              <img [src]="item.product.image_url" alt="">
+            </div>
+            <div class="main">
+              <h3 class="product-name">{{ item.product.product_name }}</h3>
+            </div>
+            <div class="price-container">
+              <div class="price">Price: ${{item.product.product_price}}</div>
+            </div>
+          </a>
+          <div class="cart-footer">
+            <button class="delete-btn" (click)="deleteCartItem(item.cart_item_id)">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+              Delete
+            </button>
+            <form action="">
+              <button class="quantity-btn green" (click)="incrementQuantity(item.cart_item_id)">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+              </button>
+              <span>{{ item.quantity }}</span>
+              <button class="quantity-btn red" (click)="decrementQuantity(item.cart_item_id)">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>            
+        </div>
+      </div>
+    </div>
+    <div class="col14" *ngIf="cart && cart.items.length > 0">
+      <div class="col-container">
+        <div class="col-body">
+          <h1>Price Detail</h1>
+          <div class="price-box">
+            <p class="subtotal">Subtotal</p>
+            <p class="total">${{ cart.total_price }}</p>
+          </div>
+          <div class="checkout">
+            <a routerLink="/confirm-order">Complete Order</a>
+          </div>
+        </div>
+
+       
+      </div>
+    </div>
+  </div>
+  
+
+</div>
+
+<app-footer></app-footer>
+
+
+

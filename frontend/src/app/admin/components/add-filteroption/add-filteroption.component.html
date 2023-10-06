@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="main-content">
+        <app-admin-sidebar *ngIf="showSidebar"> </app-admin-sidebar>
+        <div class="main-top">
+            <div class="bars" id="menu" (click)="toggleSidebar()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+
+        <div class="carac">
+            <h2 class="heading">Add New Caracteristic </h2>
+            <form action="" [formGroup]="angForm" (ngSubmit)="postdata()" autocomplete="off">
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Name</label>
+                    </div>
+                    
+                    <input type="text" formControlName="filteroption_name">
+                </div>
+
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Property</label>
+                    </div>
+                    <select formControlName="filter_id" (change)="selectFilter($event)">
+                        <option disabled selected>choose property</option>
+                        <option *ngFor="let filter of filters" [value]="filter.filter_id">{{filter.filter_name}}</option>
+                    </select>
+                </div>
+            
+                <input type="submit" name="submit" value="Add New Option" class="add">
+            </form>
+        </div>
+    </div>
+
+</div>       
+        
+
+

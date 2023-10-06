@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="main-content">
+
+        <div class="content">
+            <div class="request-container">
+                <h1>Requests</h1>
+                <div class="cols">
+                    <div class="col8" *ngFor="let request of requests">
+                        <div class="requests">
+                            <div class="request">
+                                <p class="strong">{{request.client_name}}</p>
+                                <p class="strong">{{request.email}}</p>
+                                <p class="message-content">{{request.message}}</p>
+                                <p class="strong" style="color: {{request.status === 'Accepted' ? 'green' : 'red'}};">{{request.status}}</p>
+                            </div>
+                            
+                            <div class="btns">
+                                <button class="green" (click)="updateStatus(request.request_id, 'Accepted')">Accept</button>
+                                <button class="red" (click)="updateStatus(request.request_id, 'Refused')">Refuse</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+
+    </div>
+</div>

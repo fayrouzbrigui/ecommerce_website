@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="main-content">
+        <div class="register">
+            <div class="form-container">
+                <h1>Create An Account</h1>
+                    <form class="form-vertical" [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm)">
+                            <label>first name*</label>
+                            <input type="text" required formControlName="first_name">
+                           
+                            <div class="ticket" *ngIf="(submitted || f['first_name'].touched) && f['first_name'].invalid">
+                                <div *ngIf="f['first_name'].errors && f['first_name'].errors['required'] " class="error">please enter first name</div>
+                            </div>
+                    
+                 
+                            <label>last name*</label>
+                            <input type="text" required formControlName="last_name" >
+                            
+                            <div class="ticket" *ngIf="(submitted || f['last_name'].touched) && f['last_name'].invalid">
+                                <div *ngIf="f['last_name'].errors && f['last_name'].errors['required'] " class="error">please enter last name</div>
+                            </div>
+                    
+        
+                            <label>username*</label>
+                            <input type="text" required formControlName="username">
+                            
+                            <div class="ticket" *ngIf="(submitted || f['username'].touched) && f['username'].invalid">
+                                <div *ngIf="f['username'].errors && f['username'].errors['required'] " class="error">please enter username</div>
+                            </div>
+                   
+               
+                            <label>email*</label>
+                            <input type="email" required formControlName="email">
+                           
+                            <div class="ticket" *ngIf="(submitted || f['email'].touched) && f['email'].invalid">
+                                <div *ngIf="f['email'].errors && f['email'].errors['required'] " class="error">please enter email</div>
+                            </div>
+                            
+                            <label>Mot de passe*</label>
+                            <input type="password" required formControlName="password">
+                            
+                            <div class="ticket"  *ngIf="(submitted || f['password'].touched) && f['password'].invalid">
+                                <div *ngIf="f['password'].errors && f['password'].errors['required'] " class="error">please enter password</div>
+                            </div>
+                    
+                            <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+        
+                            <div class="login-legal">
+                                By creating an account, you agree to our <a href="">Terms o Usef</a> and <a href="">Privacy Policy</a>
+                            </div>
+        
+                            <label class="required" for="">* REQUIRED FIELDS</label>
+                    
+                      
+                    </form>
+           
+                
+            </div>
+        </div>
+
+    </div>
+</div>
+

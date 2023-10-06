@@ -1,0 +1,49 @@
+<app-header></app-header>
+<div class="wishlist-container">
+  <div class="row" *ngIf="wishlist && wishlist.wishlistitems.length === 0">
+    <div class="row-container">
+      <div class="container">
+        <i class="fa fa-heart" aria-hidden="true"></i>
+        <h2>Your wishlist is empty!</h2>
+        <a class="discover" routerLink="/home">Discover our products</a>
+      </div>
+    </div>
+  </div>
+
+  <div classs="row" *ngIf="wishlist">
+    <div class="col12">
+      <div class="card">
+        <div class="wishlist-body"  *ngFor="let item of wishlist.wishlistitems">
+          <div class="item">
+            <div class="product-image">
+              <img [src]="item.product.image_url" alt="">
+            </div>
+            <div class="main">
+              <h3 class="product-name">{{ item.product.product_name }}</h3>
+            </div>
+            <div class="price-container">
+              <div class="price">Price: ${{ item.product.product_price }}</div>
+            </div>
+          </div>
+          <div class="wishlist-footer">
+            <button class="delete-btn" (click)="deleteWishlistItem(item.wishlist_item_id)">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+              Delete</button>
+          </div>
+          </div>
+        </div>
+    </div>
+    <ul>
+      <li>
+        <div>
+           
+          <h3></h3>
+        </div>
+       
+      </li>
+    </ul>
+</div>
+</div>
+
+<app-footer></app-footer>
+

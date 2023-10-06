@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&family=Poppins:wght@300;400;600;700;800&family=Tajawal:wght@200;300;400;500;700&display=swap');
+
+.register{
+    width: 100%;
+    position: relative;
+    background-color: #f1ebe7;
+    padding-top: 100px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.container{
+    max-width: 1184px;
+    margin: 0 auto;
+}
+
+.container h1{
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    vertical-align: baseline;
+}
+
+.container p{
+    text-align: center;
+    margin-top: 19px;
+    margin-bottom: 19px;
+    line-height: 1.375;
+}
+
+.form-vertical{
+    margin-top: 46px;
+    vertical-align: baseline;
+}
+
+.form-vertical form label{
+    display: block;
+    font-weight: 600;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.form-vertical form input{
+    width: 100%;
+    margin-bottom: 19px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    background-color: white;
+    font-weight: 400;
+    font-size: 1em;
+    padding: 19px 20px;
+
+}
+
+button{
+    display: block;
+    width: 100%;
+    font-weight: 600;
+    font-size: 0.75em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+    padding: 23px 0;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 2px;
+    border: 2px solid transparent;
+    transition: all 300ms ease;
+}
+
+button:hover{
+    background-color: #f1ebe7;
+    color: black;
+    border: 1px solid black;
+}
+
+.login-legal{
+    font-size: 11px;
+    margin: 15px 0 30px;
+    text-align: center;
+
+}
+
+.login-legal a{
+    display: inline;
+    font-size: 11px;
+}
+
+.required{
+    text-align: center;
+    margin-top: 16px;
+    display: block;
+    font-weight: 600;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+}
+
+.error{
+color: red;
+padding-bottom: 10px;
+}
+

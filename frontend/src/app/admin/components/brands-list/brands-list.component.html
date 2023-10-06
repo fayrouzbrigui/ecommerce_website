@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="main-content">
+        <app-admin-sidebar *ngIf="showSidebar"> </app-admin-sidebar>
+        <div class="main-top">
+            <div class="bars" id="menu" (click)="toggleSidebar()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="brands">
+
+            <h2 class="heading"> Brands list </h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Brand</th>
+                            <th>Image</th>
+                            <th>Created At</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let brand of brands">
+                            <td>{{brand.brand_name}}</td>
+                            <td>
+                                <img [src]="brand.image_url" alt="">
+                            </td>
+                            <td>{{brand.createdAt| date}} </td>
+                            <td>
+                                <a class="btn btn-success" [routerLink]="['/edit-brand/',brand.brand_id]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                <a class="trash" (click)="deleteBrand(brand.brand_id)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <button class="add" routerLink="/add-brand">Add New Brand</button>
+        </div>  
+    </div>
+</div>
+        
+       

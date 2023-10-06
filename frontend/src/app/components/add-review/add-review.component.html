@@ -1,0 +1,76 @@
+<app-header></app-header>
+<div class="main-section">
+    <div class="main-row">
+        <div class="col">
+            <div class="user-nav">
+                <a href="#" class="nav-link">
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                    Your Profile
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa fa-first-order" aria-hidden="true"></i>
+                    Your Orders
+                   
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    Your Wishlist
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa fa-address-book" aria-hidden="true"></i>
+                    Your Addresses
+                </a>
+            </div>
+        </div>
+        <div class="col12">
+            <div class="card">
+                <div class="header">
+                    <a href=""><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
+                    <h1>Product Rating</h1>
+                </div>  
+                
+                <form action="" [formGroup]="angForm" (ngSubmit)="postdata()" class="review-form">
+                    <div *ngIf="OrderItem" class="col16">
+                        <h2>SELECT THE STARS TO RATE THE PRODUCT</h2>
+                        <div class="hr">
+                            <a [routerLink]="['/product-details/',OrderItem.product.product_id]" class="product-link">
+                                <img [src]="OrderItem.product.image_url" alt="" class="product-image">
+                            </a>
+                        </div>
+                        <div class="item-details">
+                            <a [routerLink]="['/product-details/',OrderItem.product.product_id]"><span>{{OrderItem.product.product_name}}</span></a>                                          
+                            <div class="form-group">
+                            
+                                <input type="checkbox" formControlName="rating" id="rating1" [value]="1" (change)="onRatingChange(1)">
+                                <label for="rating1" class="fa fa-star-o"></label>
+                    
+                                <input type="checkbox" formControlName="rating" id="rating2" [value]="2" (change)="onRatingChange(2)">
+                                <label for="rating2" class="fa fa-star-o"></label>
+                    
+                                <input type="checkbox" formControlName="rating" id="rating3" [value]="3" (change)="onRatingChange(3)">
+                                <label for="rating3" class="fa fa-star-o"></label>
+                    
+                                <input type="checkbox" formControlName="rating" id="rating4" [value]="4" (change)="onRatingChange(4)">
+                                <label for="rating4" class="fa fa-star-o"></label>
+                    
+                                <input type="checkbox" formControlName="rating" id="rating5" [value]="5" (change)="onRatingChange(5)">
+                                <label for="rating5" class="fa fa-star-o"></label>
+                        
+                            </div>
+                        </div>                                        
+                    </div> 
+                    <div class="form-group">
+                        <textarea name="" formControlName="comment" id="" cols="30" rows="10"></textarea>
+                    </div>
+                
+                    <input type="submit" name="submit" value="Add New Review" class="add">
+                </form>
+                
+            </div>
+            
+        </div>
+            
+    </div>
+            
+</div>
+           

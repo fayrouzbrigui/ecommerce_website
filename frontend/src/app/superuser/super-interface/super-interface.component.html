@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="main-content">
+      <div class="top">
+        <div class="logo">
+          <a routerLink="/admin-interface"><span class="first">Dream</span><span class="second">Purely</span></a>
+        </div>
+
+        <div class="links">
+          <ul>
+            <a routerLink="/users-list"><li class="fa fa-users"></li>Users</a>
+            <a routerLink="/users-request"><li class="fa fa-reply"></li>Check Requests</a>
+            <a routerLink="/send-message"><li class="fa fa-list-ul"></li>Send Message</a>
+            <a href=""><li class="fa fa-sign-out"></li>Log Out</a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="profile">
+        <div class="user">
+
+          <h3>Profile</h3>
+          <div class="profile-container" *ngIf="userInfo">
+          
+           <div class="user-details">
+             <div class="col">
+               <p><strong>Username:</strong></p>
+               <p><strong>First Name:</strong></p>
+               <p><strong>last Name:</strong></p>
+               <p><strong>Email:</strong></p>
+             </div>
+        
+             <div class="col">
+               <p>{{ userInfo.username }}</p>
+               <p>{{ userInfo.first_name }}</p>
+               <p>{{ userInfo.last_name }}</p>
+               <p>{{ userInfo.email }}</p>
+             </div>
+              
+          </div>
+        </div>
+        
+      </div>
+    </div>
+       
+       
+  </div>
+        
+        
+
+</div>
+

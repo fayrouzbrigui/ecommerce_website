@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+
+
+.header{
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    height: 72px;
+    box-shadow: 0 4px 4px -4px rgba(0,0,0,.12);
+    z-index: 70;
+    background-color: #d0a5a0;
+    width: 100%;  
+}
+
+.header-container{
+    padding: 16px 0;
+    display: flex;
+    flex-wrap: nowrap;
+    flex: 0 1 auto;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1184px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    flex-basis: 18.75%;
+    max-width: 18.75%;
+    min-width: 18.75%;
+    width: 18.75%;
+    padding: 0 8px;
+}
+
+.logo .first{
+    color: black;
+}
+
+.logo .second {
+    background-image: linear-gradient(to right, #9c53ae, #b17cd1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.logo a{
+    display: flex;
+    align-items: center;
+    font-family: 'Pacifico', cursive;
+    margin-right: auto;
+    font-size: 2rem;
+    position: relative;
+    font-weight: 800;
+   
+}
+
+.form{
+    display: flex;
+    padding: 0 8px;
+    max-width: 100%;
+    flex-grow: 1;
+    margin-top: 0em;
+}
+
+.input-container{
+    display: flex;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    border: 1px solid #a3a3a6;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.input-container  i{
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 8px;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-container input{
+    height: 100%;
+    flex-grow: 1;
+    font-size: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    outline: 0;
+    border: 0;
+    position: relative;
+}
+
+.btn{
+    position: relative;
+    line-height: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 0 8px;
+    flex-shrink: 0;
+    transform: translateZ(0);
+    padding: 12px 16px;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: .875rem;
+    font-weight: 600;
+    outline: 0;
+    border: 0;
+    border-radius: 4px;
+    background-color: #f3c4b8;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+}
+
+.btn:hover{
+    background-color: #d7a599;
+}
+
+.form ul {
+    list-style-type: none;
+    width: 100%;
+    top: 38px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.15);
+    right: 0;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: #ffffff;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  
+  .form ul li {
+    padding: 10px;
+    font-size: 16px;
+    
+  }
+  
+  .form ul li:last-child {
+    border-bottom: none;
+  }
+  
+  .form ul li:hover {
+    background-color: #edeaea;
+    cursor: pointer;
+  }
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 1 auto;
+    padding-left: 0;
+    padding-right: 0;
+    font-weight: 500;
+}
+
+.user-side{
+    position: relative;
+    display: block;
+}
+
+.user-label{
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 4px;
+}
+
+.user-icon{
+    margin-right: 8px;
+    flex-shrink: 0;
+    font-size: 1rem;
+    
+}
+
+.user-icon i{
+    font-size: 1rem;
+    width: 24px;
+    height: 24px;
+    font-weight: 500;
+}
+
+.icon{
+    margin-left: 8px;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    font-size: 1rem;
+}
+
+.menu-box{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 100%;
+    min-width: 125px;
+    display: block;
+    
+    
+    font-weight: 400;
+    transform: translate3d(-50%,0,0);
+    
+}
+
+.inbox{
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 4px;
+    display: block;
+}
+
+.inbox a{
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.inbox a i{
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    flex-shrink: 0;
+
+}
+
+.inbox .button-container{
+    position: relative;
+    text-align: center;
+    padding: 8px;
+}
+
+.inbox .button-container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 2px;
+    background-color: #f1f1f2;
+
+}
+
+.inbox .button-container .login-btn{
+    position: relative;
+    margin: 8px 0;
+    cursor: pointer;
+    font-size: .875rem;
+    line-height: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    outline: 0;
+    border: 0;
+    background: transparent;
+}
+
+.navbar .panier-btn{
+    font-size: 1rem;
+    padding: 0 8px;
+    align-items: center;
+    display: flex;
+    font-weight: 500;
+}
+
+.navbar .panier-btn span{
+    margin-right: 8px;
+    cursor: pointer;
+
+}
+
+.navbar .panier-btn span i{
+    width: 24px;
+    height: 24px;
+    font-weight: 500;
+}
+
+.navbar .wishlist-btn{
+    font-size: 1rem;
+    padding: 0 8px;
+    align-items: center;
+    display: flex;
+    font-weight: 500;
+}
+
+.navbar .wishlist-btn span{
+    margin-right: 8px;
+    cursor: pointer;
+
+}
+
+.navbar .wishlist-btn span i{
+    width: 24px;
+    height: 24px;
+    font-weight: 500;
+}

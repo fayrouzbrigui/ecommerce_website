@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="main-content">
+        <app-admin-sidebar *ngIf="showSidebar"> </app-admin-sidebar>
+        <div class="main-top">
+            <div class="bars" id="menu" (click)="toggleSidebar()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+        </div>
+
+       
+
+        <div class="categories">
+            <h2 class="heading">Edit Subcategory </h2>
+            <form action="" [formGroup]="angForm" (ngSubmit)="postdata()" autocomplete="off">
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Name</label>
+                    </div>
+                    
+                    <input type="text" formControlName="subcategory_name">
+                </div>
+
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Category</label>
+                    </div>
+                    <select formControlName="category_id" (change)="selectCategory($event)">
+                        <option disabled selected>choose category</option>
+                        <option *ngFor="let category of categories" [value]="category.category_id">{{category.category_name}}</option>
+                    </select>
+                </div>
+                
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Description</label>
+                    </div>
+                    <textarea rows="4" cols="50" formControlName="subcategory_description"></textarea>
+                </div>
+
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Image</label>
+                    </div>
+                    <input type="file" (change)="onImageSelected($event)" formControlName="main_category_image">
+                </div>
+
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Icon</label>
+                    </div>
+                    <input type="file" (change)="onIconSelected($event)" formControlName="subcategory_icon">
+                </div>
+
+            
+                <input type="submit" name="submit" value="Edit Subcategory" class="add">
+            </form>
+        </div>
+    </div>
+
+</div>
+        
+       
+   
+
+
+
+

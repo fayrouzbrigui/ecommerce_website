@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="main-content">
+        <app-admin-sidebar></app-admin-sidebar>
+        <div class="dashboard">
+            <div class="side side1">
+                <div class="username" *ngIf="supplierInfo">
+                    <h2><span>Welcome</span>{{supplierInfo.username}}</h2>
+                </div>
+                <h2 class="heading"> Dashboard </h2>
+                <div class="cards">
+                    <div class="box skyblue">
+                        <p> <i class="fa fa-money" aria-hidden="true"></i> </p>
+                        <p> Total Earning </p>
+                        <h3> ${{earning}}</h3>
+                    </div>
+                    <div class="box yellow">
+                        <p><i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+                        <p> Total Sales </p>
+                        <h3> {{orders_count}} </h3>
+                    </div>
+                    <div class="box purple">
+                        <p> <i class="fa fa-users" aria-hidden="true"></i> </p>
+                        <p> Total Users </p>
+                        <h3>{{ count }}</h3>
+                    </div>
+                    <div class="box red">
+                        <p> <i class="fa fa-comment" aria-hidden="true"></i> </p>
+                        <p> Total Reviews </p>
+                        <h3> 20 </h3>
+                    </div>
+                </div>
+    
+                <div class="table">
+                    <h3>Last Orders</h3>
+                    <div class ="row" *ngIf="OrderItems.length > 0">
+                        <table>
+                            <thead class="thead">
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Product imagee</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of OrderItems">
+                                    <td> <h2>{{ item.product.product_name }}</h2></td>
+                                    <td> <img [src]="item.product.image_url"></td>
+                                    <td>${{ item.price }}</td>
+                                    <td>{{ item.quantity }}</td>
+                                    <td>{{item.status}}</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="side">
+                <div class="calendar">
+                    <h2 class="header">{{ currentDate | date: 'MMMM yyyy' }}</h2>
+                    <table>
+                      <tr>
+                        <th class="day">Sun</th>
+                        <th class="day">Mon</th>
+                        <th class="day">Tue</th>
+                        <th class="day">Wed</th>
+                        <th class="day">Thu</th>
+                        <th class="day">Fri</th>
+                        <th class="day">Sat</th>
+                      </tr>
+                      <tr *ngFor="let week of days | chunk: 7">
+                        <td *ngFor="let day of week" class="date" [class.empty]="!day">
+                          {{ day }}
+                        </td>
+                      </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

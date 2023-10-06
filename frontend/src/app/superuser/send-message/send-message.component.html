@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="main-content">
+        <div class="top">
+            <div class="logo">
+              <a routerLink="/admin-interface"><span class="first">Dream</span><span class="second">Purely</span></a>
+            </div>
+    
+            <div class="links">
+              <ul>
+                <a href=""><li class="fa fa-users"></li>Users</a>
+                <a routerLink="/users-request"><li class="fa fa-reply"></li>Check Requests</a>
+                <a href=""><li class="fa fa-list-ul"></li>Send Message</a>
+                <a href=""><li class="fa fa-sign-out"></li>Log Out</a>
+              </ul>
+            </div>
+        </div>
+        <div class="form-container">
+            <h1>Sent Message</h1>
+            <form action="" [formGroup]="angForm" (ngSubmit)="postdata()" autocomplete="off">
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Receiver</label>
+                    </div>
+                    <select formControlName="receiver" (change)="selectReceiver($event)">
+                        <option disabled selected>choose receiver</option>
+                        <option *ngFor="let user of users" [value]="user.id">{{user.username}}</option>
+                    </select>
+                </div>
+        
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Message</label>
+                    </div>
+                   <textarea formControlName="message" id="" cols="60" rows="15"></textarea>
+                </div>
+                <input type="submit" name="submit" value="Send message" class="add">
+            </form>
+        </div>
+    </div>
+</div>
+

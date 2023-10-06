@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="main-content">
+        <app-admin-sidebar *ngIf="showSidebar"> </app-admin-sidebar>
+        <div class="main-top">
+            <div class="bars" id="menu" (click)="toggleSidebar()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="options">
+            <h2 class="heading"> Filter Options List </h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Main Category</th>
+                            <th>Property</th>
+                            <th>Created At</th>
+                            <th>Actions</th>
+                        </tr>
+                       
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let option of options">
+                            <td>{{option.filteroption_name}}</td>
+                            <td>
+                            
+                                  {{ option.filter_name}}
+                          
+                              </td>
+
+                            <td>{{option.createdAt}}</td>
+
+                            <td>
+                                <a class="btn btn-success" [routerLink]="['/edit-filteroption/',option.filteroption_id]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                <a class="trash" (click)="deleteOption(option.filteroption_id)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <button class="add" routerLink="/add-filteroption">Add New Option</button>
+        </div>
+        
+
+    </div>
+
+</div>
+       
+    
+
+
+

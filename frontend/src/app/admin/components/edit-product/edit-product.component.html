@@ -1,0 +1,133 @@
+<div class="container">
+    
+    <div class="main-content">
+        <app-admin-sidebar *ngIf="showSidebar"> </app-admin-sidebar>
+        <div class="main-top">
+            <div class="bars" id="menu" (click)="toggleSidebar()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="products">
+            <h2 class="heading"> Edit Product </h2>
+            <form action="" [formGroup]="angForm" (ngSubmit)="postdata()" autocomplete="off">
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Product Name</label>
+                    </div>
+                    
+                    <input type="text" formControlName="product_name">
+                </div>
+
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Price</label>
+                    </div>
+                    <input type="number" formControlName="product_price">
+                </div>
+
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Stock</label>
+                    </div>
+                    <input type="number" formControlName="product_countStock">
+                </div>
+
+                
+
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Brand</label>
+                    </div>
+                    <select formControlName="brand_id" (change)="selectBrand($event)">
+                        <option disabled selected>choose brand</option>
+                        <option  *ngFor="let brand of brands" [value]="brand.brand_id">{{brand.brand_name}}</option>
+                    </select>
+                </div>
+
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Main Category</label>
+                    </div>
+                    <select formControlName="main_category_id" (change)="selectMainCategory($event)">
+                        <option disabled selected >choose main category</option>
+                        <option *ngFor="let category of maincategories" [value]="category.main_category_id">{{category.main_category_name}}</option>
+                    </select>
+                </div>
+
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Category</label>
+                    </div>
+                    <select formControlName="category_id" (change)="selectCategory($event)">
+                        <option disabled selected>choose category</option>
+                        <option *ngFor="let category of categories" [value]="category.category_id">{{category.category_name}}</option>
+                    </select>
+                </div>
+
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Subcategory</label>
+                    </div>
+                    <select formControlName="subcategory_id" (change)="selectSubcategory($event)">
+                        <option disabled selected>choose category</option>
+                        <option *ngFor="let category of subcategories" [value]="category.subcategory_id">{{category.subcategory_name}}</option>
+                    </select>
+                </div>
+
+                <div class="form-control">
+                    <label>Options</label>
+                    <ng-select [items]="filteroptions"
+                                bindLabel="filteroption_name"
+                                bindValue="filteroption_id"
+                                placeholder="Select filter options"
+                                formControlName="filteroption_id"
+                                [(ngModel)]="selectedfilteroptionsIds"
+                                [required]="true"
+                                [multiple]="true">
+                                >
+                    </ng-select>
+                </div>
+
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Description</label>
+                    </div>
+                    <textarea rows="4" cols="50" formControlName="product_description"></textarea>
+                </div>
+
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Image</label>
+                    </div>
+                    <input type="file" (change)="onImageSelected($event)" formControlName="product_image">
+                </div>
+
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Trending</label>
+                    </div>
+                    <input type="checkbox" formControlName="trending">
+                </div>
+
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Offer</label>
+                    </div>
+                    <input type="checkbox" formControlName="offer">
+                </div>
+
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Deadline</label>
+                    </div>
+                    <input type="datetime-local" formControlName="deadline">
+                </div>
+                    
+                <input type="submit" name="submit" value="EditProduct" class="add">
+            </form>
+        </div>
+    </div>
+</div>
+

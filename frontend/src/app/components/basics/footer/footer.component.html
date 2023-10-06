@@ -1,0 +1,32 @@
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Get help</h4>
+                <ul>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Our Services</a></li>
+                    <li><a href="">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>In Our Store</h4>
+                <ul *ngFor="let category of categories">
+                    <li><a href="">{{category.subcategory_name}}</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Get In Touch</h4>
+                <div class="social-links">
+                    <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

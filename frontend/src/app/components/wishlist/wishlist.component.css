@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wishlist-container{
+    padding-top: 100px;
+    flex-grow: 1;
+    font-size: .875rem;
+    color: #313133;
+    background-color: #ffffff;
+    min-height: 70vh;
+}
+
+.row{
+    display: flex;
+    padding-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1184px;
+    width: 100%;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+}
+
+.col12{
+    flex-basis: 75%;
+    max-width: 75%;
+    min-width: 75%;
+    width: 75%;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.card{
+    margin-top: 16px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.05);
+    border-radius: 4px;
+    display: block;
+}
+
+.wishlist-body{
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    position: relative;
+    display: block;
+}
+
+.item{
+    display: flex;
+    outline: 0;
+}
+
+.product-image{
+    width: 72px;
+    align-self: baseline;
+    position: relative;
+    flex-shrink: 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.product-image img{
+    height: auto;
+    width: 100%;  
+    display: block;
+}
+
+.main{
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    min-width: 0;
+    display: block;
+    color: inherit;
+    cursor: pointer;
+
+
+}
+
+.product-name{
+    font-size: 1rem;
+    font-weight: 400;
+    overflow: hidden;
+}
+
+.product-name:hover{
+    text-decoration: underline;
+}
+
+.price-container{
+    min-width: 30%;
+    width: 30%;
+    flex-shrink: 0;
+}
+
+.price{
+    font-size: 1.25rem;
+    text-align: right;
+    font-weight: 500;
+    direction: ltr;
+    display: block;
+}
+
+.wishlist-footer{
+    padding-top: 8px;
+    align-items: center;
+    display: flex;
+    font-size: .875rem;
+}
+
+.delete-btn{
+    padding:10px;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    line-height: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    outline: 0;
+    border: 0;
+    text-align: center;
+    color: red;
+
+}
+
+.delete-btn i{
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}

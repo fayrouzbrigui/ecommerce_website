@@ -1,0 +1,47 @@
+<div class="container">
+
+    <div class="main-content">
+        <app-admin-sidebar *ngIf="showSidebar"> </app-admin-sidebar>
+        <div class="main-top">
+            <div class="bars" id="menu" (click)="toggleSidebar()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="categories">
+            <h2 class="heading">Add New Main Category </h2>
+            <form action="" [formGroup]="angForm" (ngSubmit)="postdata()" autocomplete="off">
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Name</label>
+                    </div>
+                    
+                    <input type="text" formControlName="main_category_name">
+                </div>
+
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Image</label>
+                    </div>
+                    <input type="file" (change)="onImageSelected($event)" formControlName="main_category_image">
+                </div>
+
+                <div class="form-control">
+                    <div class="label-container">
+                        <label>Icon</label>
+                    </div>
+                    <input type="file" (change)="onIconSelected($event)" formControlName="main_category_icon">
+                </div>
+
+            
+                <input type="submit" name="submit" value="Add New Main Category" class="add">
+            </form>
+        </div>
+    </div>
+
+</div>
+        
+        
+
+

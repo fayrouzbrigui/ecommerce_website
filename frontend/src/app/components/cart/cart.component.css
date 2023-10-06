@@ -1,0 +1,342 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cart-container{
+    padding-top: 100px;
+    flex-grow: 1;
+    font-size: .875rem;
+    color: #313133;
+    background-color: #ffffff;
+    min-height: 70vh;
+
+}
+
+.row{
+    display: flex;
+    padding-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1184px;
+    width: 100%;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+}
+
+.col12{
+    flex-basis: 75%;
+    max-width: 75%;
+    min-width: 75%;
+    width: 75%;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.card{
+    margin-top: 16px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.05);
+    border-radius: 4px;
+    display: block;
+}
+
+.cart-header{
+    padding-bottom: 8px;
+    padding-top: 8px;
+    border-bottom: 1px solid #f1f1f2;
+    display: block;
+}
+
+.cart-header h2{
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+   
+}
+
+.cart-body{
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    position: relative;
+    display: block;
+}
+
+.product-link{
+    display: flex;
+    outline: 0;
+}
+
+.product-image{
+    width: 72px;
+    align-self: baseline;
+    position: relative;
+    flex-shrink: 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.product-image img{
+    height: auto;
+    width: 100%;  
+    display: block;
+}
+
+.main{
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    min-width: 0;
+    display: block;
+    color: inherit;
+    cursor: pointer;
+
+
+}
+
+.product-name{
+    font-size: 1rem;
+    font-weight: 400;
+    overflow: hidden;
+}
+
+.product-name:hover{
+    text-decoration: underline;
+}
+
+.price-container{
+    min-width: 30%;
+    width: 30%;
+    flex-shrink: 0;
+}
+
+.price{
+    font-size: 1.25rem;
+    text-align: right;
+    font-weight: 500;
+    direction: ltr;
+    display: block;
+}
+
+.cart-footer{
+    padding-top: 8px;
+    align-items: center;
+    display: flex;
+    font-size: .875rem;
+}
+
+.delete-btn{
+    padding:10px;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    line-height: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    outline: 0;
+    border: 0;
+    text-align: center;
+    color: red;
+
+}
+
+.delete-btn i{
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+form{
+    margin-left: auto;
+    position: relative;
+    align-items: center;
+    display: flex;
+
+}
+
+.quantity-btn{
+    padding: 4px;
+    box-shadow: none;
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 1rem;
+    text-align: center;
+    font-weight: 500;
+    overflow: hidden;
+    text-transform: uppercase;
+    outline: 0;
+    border: 0;
+    border-radius: 4px;
+}
+
+.quantity-btn i{
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    display: inline-block
+}
+
+.quantity-btn:hover{
+    background-color: #d1d1d4;
+}
+
+.green:hover{
+    color:green;
+}
+
+.red:hover{
+    color: rgb(244, 1, 1);
+}
+form span{
+    line-height: 1;
+    text-align: center;
+    font-weight: 500;
+    margin: 8px;
+    width: 32px;
+}
+
+.col14{
+    flex-basis: 25%;
+    max-width: 25%;
+    min-width: 25%;
+    width: 25%;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-container{
+    padding-top: 16px;
+    top: 72px;
+    position: sticky;
+}
+
+.col-body{
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.05);
+    border-radius: 4px;
+}
+
+.col-body h1{
+    font-weight: 600;
+    padding: 8px;
+    border-bottom: 1px solid #f1f1f2;
+    font-size: 1.25rem;
+}
+
+.price-box{
+    font-size: .875rem;
+    font-weight: 500;
+    padding: 8px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.subtotal{
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.total{
+    font-size: 1.25rem;
+    text-align: right;
+    padding-left: 16px;
+    display: block;
+    font-weight: 500;
+}
+
+.checkout{
+    padding: 8px;
+    border-top: 1px solid #f1f1f2; 
+    display: flex;
+    justify-content: center;
+}
+
+.checkout a{
+    width: 100%;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    line-height: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    outline: 0;
+    border: 0;
+    background-color: black;
+    color: white;
+}
+
+.row-container{
+    padding-top: 16px;
+    flex-basis: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.container{
+    text-align: center;
+    padding-bottom: 32px;
+    padding-top: 32px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.05);
+    border-radius: 4px;
+}
+
+.container i{
+    height: 100px;
+    width: 100px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    text-align: center;
+    font-size: 100px;
+}
+
+.container h2{
+    font-size: 1rem;
+    font-weight: 500;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    margin-bottom: 20px;
+}
+
+.container a{
+    margin-top: 24px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+    position: relative;
+    cursor: pointer;
+    font-size: .875rem;
+    line-height: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 16px;
+    outline: 0;
+    border: 0;
+    border-radius: 4px;
+}
+
+.discover{
+    background-color:  #f3c4b8;
+    color: black;
+}

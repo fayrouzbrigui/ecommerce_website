@@ -1,0 +1,102 @@
+<app-header></app-header>
+<div class="main-section">
+    <div class="main-row">
+        <div class="col">
+            <div class="user-nav">
+                <a href="#" class="nav-link">
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                    Your Profile
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa fa-first-order" aria-hidden="true"></i>
+                    Your Orders
+                   
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    Your Wishlist
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa fa-address-book" aria-hidden="true"></i>
+                    Your Addresses
+                </a>
+            </div>
+        </div>        
+        <div class="order-section">
+            <div class="order-body">
+                <div class="section-title">
+                    <h1 class="title">Your Order Details</h1>
+                </div>
+                <div class="row" *ngIf="OrderItem">
+                    <div class="order-details" >
+                        <h2 class="transaction">Transaction ID: {{ OrderItem.order.transaction_id }}</h2>
+                        <p class="quantity">Quantity: {{OrderItem.quantity}}</p>
+                        <p class="date">Order Date: {{OrderItem.order.date_ordered | date}}</p>
+                        <p class="price">Total Price: <span>${{OrderItem.order.total_price}}</span></p>
+                    </div>
+                    <div class="order-item-details">
+                        <h2 class="details-title">Order Item Details</h2>
+                        <div class="product-details">
+                            <div class="item">
+                                <div class="item-card">
+                                    <div class="ticket">
+                                        <div class="status">{{OrderItem.status}}</div>
+                                        <p class="shipping-date"></p>
+                                    </div>
+
+                                    <div class="card">
+                                        <a [routerLink]="['/product-details/',OrderItem.product.product_id]" class="product-link">
+                                            <img [src]="OrderItem.product.image_url" alt="" class="product-image">
+                                        </a>
+                                        <div class="item-details">
+                                            <a [routerLink]="['/product-details/',OrderItem.product.product_id]">{{OrderItem.product.product_name}}</a>
+                                            <div class="price-details">
+                                                <p class="quantity">Quantity: {{OrderItem.quantity}}</p>
+                                                <p class="price">Price: ${{OrderItem.price}}</p>
+                                            </div>                                           
+                                        </div>                                        
+                                    </div>                                    
+                                </div>
+                                <div class="button-section">
+                                    <a [routerLink]="['/product-details/',OrderItem.product.product_id]" class="review-link">Please Give Your Review</a>
+                                     <a href="#" class="btn">Order History</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="payment-shipping-details">
+                       <div class="table-info">
+                        <div class="table">
+                            <h2 class="table-title">Payment</h2>
+                            <div class="table-body">
+                                <h3 class="body-title">Payment Method</h3>
+                                <p class="table-detail">{{OrderItem.order.payment_method.payment_method_name}}</p>
+                            </div>
+                            <div class="table-body">
+                                <h3 class="body-title">Payment Details</h3>
+                                <p class="table-detail">Subtotal: ${{OrderItem.price}}</p>
+                                <p class="table-detail">Shipping price: ${{OrderItem.order.payment_method.shipping_price}}</p>
+                                <p class="table-detail">Total price: ${{OrderItem.order.total_price}}</p>
+                            </div>
+                        </div>
+                       </div>
+                       <div class="table-info">
+                            <div class="table">
+                                <h2 class="table-title">Shipping</h2>
+                                <div class="table-body">
+                                    <h3 class="body-title">Shipping address</h3>
+                                    <p class="table-detail">{{OrderItem.order.shipping_address.country}} {{OrderItem.order.shipping_address.province}} {{OrderItem.order.shipping_address.city}} {{OrderItem.order.shipping_address.street}}</p>
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+</div>
+<app-footer></app-footer>

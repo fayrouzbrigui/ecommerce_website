@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="main-content">
+        <app-admin-sidebar *ngIf="showSidebar"> </app-admin-sidebar>
+        <div class="main-top">
+            <div class="bars" id="menu" (click)="toggleSidebar()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+
+
+            <div class="categories">
+                <h2 class="heading"> Main Categories list </h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Main Category</th>
+                                <th>Image</th>
+                                <th>Icon</th>
+                                <th>Created At</th>
+                                <th>Actions</th>
+                            </tr>
+                           
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let mcategory of mcategories">
+                                <td>{{mcategory.main_category_name}}</td>
+                                <td>
+                                    <img [src]="mcategory.image_url" alt="">
+                                </td>
+    
+                                <td>
+                                    <img [src]="mcategory.icon_url" alt="">
+                                </td>
+    
+                                <td>{{mcategory.createdAt}}</td>
+    
+                                <td>
+                                    <a class="btn btn-success" [routerLink]="['/edit-main-category/',mcategory.main_category_id]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <a class="trash" (click)="deleteMCategory(mcategory.main_category_id)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                    
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+    
+                <button class="add" routerLink="/add-main-categories">Add New Category</button>
+            </div>
+    
+     
+
+       
+    </div>
+</div>
+       
+        
+

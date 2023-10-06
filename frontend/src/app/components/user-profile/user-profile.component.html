@@ -1,0 +1,69 @@
+<app-header></app-header>
+<div class="main">
+  <div class="row">
+    <div class="col">
+      <div class="user-nav">
+          <a routerLink="/user-profile" class="nav-link">
+              <i class="fa fa-user-o" aria-hidden="true"></i>
+              Your Profile
+          </a>
+          <a routerLink="/user-orders" class="nav-link">
+              <i class="fa fa-first-order" aria-hidden="true"></i>
+              Your Orders
+             
+          </a>
+          <a routerLink="/wishlist" class="nav-link">
+              <i class="fa fa-heart-o" aria-hidden="true"></i>
+              Your Wishlist
+          </a>
+          <a routerLink="/address" class="nav-link">
+              <i class="fa fa-address-book" aria-hidden="true"></i>
+              Your Addresses
+          </a>
+      </div>
+    </div>
+    <div class="col12">
+      <div class="container">
+        <div class="header">
+          <h1>Your Profile</h1>
+          <a routerLink="/shipping-address">Add Address</a>
+        </div>
+        <div class="info">
+          <div class="col8">
+            <div class="article" *ngIf="userInfo">
+              <div class="top-article">
+                <h2>Private Info</h2>
+              </div>
+              <div class="col11">
+                <p>{{ userInfo.first_name }} {{ userInfo.last_name }}</p>
+                <p>{{ userInfo.username }}</p>
+                <p>{{ userInfo.email }}</p> 
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="col8">
+            <div class="article" *ngIf="defaultaddress">
+              <div class="top-article">
+                <h2>Address</h2>
+                <a routerLink="/address"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+              </div>
+              <div class="col11">
+                <p> {{ defaultaddress.country }} {{ defaultaddress.province }} {{ defaultaddress.city }} {{ defaultaddress.street }}</p>
+                <p>{{ defaultaddress.country }} {{ defaultaddress.province }}</p>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+  
+
+<app-footer></app-footer>

@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="main-content">
+        <app-admin-sidebar *ngIf="showSidebar"> </app-admin-sidebar>
+        <div class="main-top">
+            <div class="bars" id="menu" (click)="toggleSidebar()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="filters">
+            <h2 class="heading"> Edit Proerty </h2>
+            <form action="" [formGroup]="angForm" (ngSubmit)="postdata()" autocomplete="off">
+                <div class="form-control">
+                    <label>Property Name</label>
+                    <input type="text" formControlName="filter_name">
+                </div>
+
+                <div class="form-control">
+                    <label>Main Category</label>
+                    <ng-select [items]="maincategories"
+                               bindLabel="main_category_name"
+                               bindValue="main_category_id"
+                               placeholder="Select main categories"
+                               formControlName="main_category_id"
+                               [(ngModel)]="selectedMainCategoryIds"
+                               [required]="true"
+                               [multiple]="true">
+                               >
+                    </ng-select>
+                </div>
+                   
+                <input type="submit" name="submit" value="Add New Property" class="add">
+            </form>
+        </div>
+    </div>
+
+
+</div>
+        
+       

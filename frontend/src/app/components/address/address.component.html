@@ -1,0 +1,53 @@
+<app-header></app-header>
+<div class="main">
+    <div class="row">
+        <div class="col">
+            <div class="user-nav">
+                <a href="#" class="nav-link">
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                    Your Profile
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa fa-first-order" aria-hidden="true"></i>
+                    Your Orders
+                   
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    Your Wishlist
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa fa-address-book" aria-hidden="true"></i>
+                    Your Addresses
+                </a>
+            </div>
+        </div>
+        <div class="col12">
+            <div class="container">
+                <div class="header">
+                    <h1>Address</h1>
+                    <a routerLink="/shipping-address">Add New Addresses</a>
+                </div>
+                <div *ngIf="shippingAddress.length > 0" class="cols">
+                    
+                    <div class="col8" *ngFor="let address of shippingAddress">
+                        <div class="addresses">
+                            <div class="address">
+                                <p> {{ address.country }} {{ address.province }} {{ address.city }} {{ address.street }}</p>
+                                <p> {{ address.country }} {{ address.province }}</p>
+                                <i *ngIf="address.is_default" class="fa fa-check-square-o" aria-hidden="true">Default Address</i>
+                            </div>
+                        
+                        
+                        <button (click)="setAsDefaultAddress(address)">Set as Default</button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>   
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,58 @@
+<app-header></app-header>
+
+<div class="main-section">
+    <div class="main-row">
+        <div class="col">
+            <div class="user-nav">
+                <a routerLink="/user-profile" class="nav-link">
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                    Your Profile
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa fa-first-order" aria-hidden="true"></i>
+                    Your Orders
+                   
+                </a>
+                <a routerLink="/wishlist" class="nav-link">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    Your Wishlist
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fa fa-address-book" aria-hidden="true"></i>
+                    Your Addresses
+                </a>
+            </div>
+        </div>   
+
+        <div class="message-section">
+            <div class="message-body">
+                <div class="section-title">
+                    <h1 class="title">Your Messages</h1>
+                </div>
+        
+                <div class ="row" *ngIf="messages.length > 0">
+                    <div class="message-item" *ngFor="let message of messages">
+        
+                        <p>From: {{ message.sender_username }}</p>
+                        <p>Message: {{ message.message }}</p>
+                   
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+   
+</div>
+
+
+
+
+
+
+<div *ngIf="messages.length === 0">
+  <p>No messages found.</p>
+</div>
+
+<app-footer></app-footer>
+
